@@ -9,6 +9,11 @@
   "scripts": {
     "prepare": "parcel build src/index.ts --target node"
   },
+  "files": [
+    "dist",
+    "src",
+    "tsconfig.json"
+  ],
   "devDependencies": {
     "parcel-bundler": "^1.9.7",
     "typescript": "^2.9.2"
