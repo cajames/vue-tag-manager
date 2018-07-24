@@ -5,5 +5,12 @@
   "main": "dist/index.js",
   "repository": "git@github.com:cajames/vue-tag-manager.git",
   "author": "Chris James <chris@webglowit.net>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "prepare": "parcel build src/index.ts --target node"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.9.7",
+    "typescript": "^2.9.2"
+  }
 }
