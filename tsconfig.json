@@ -1,7 +1,25 @@
 {
     "compilerOptions": {
-        "lib": [
-            "dom"
-        ]
-    }
-}
+      "allowSyntheticDefaultImports": true,
+      "declaration": false,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "lib": [
+        "dom",
+        "es6",
+        "es2015",
+        "es2016",
+        "es2017"
+      ],
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "noImplicitAny": true,
+      "pretty": true,
+      "rootDir": "./src",
+      "sourceMap": true,
+      "target": "ES2016"
+    },
+    "exclude": [
+      "node_modules"
+    ]
+  }
