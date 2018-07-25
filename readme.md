@@ -8,11 +8,37 @@ Initially used [vue-gtm](https://github.com/mib200/vue-gtm) which is a great lib
 
 Really liked the [React GTM](https://github.com/alinemorelli/react-gtm) script injection dev experience, and liked the Vue GTM dev and track experience (as a Vue Plugin, with the `$gtm` interface). So this plugin aims to combine both of them into this simple library.
 
+## Usage
+
+Simple usage:
+
+```js
+import Vue from "vue"
+import VueTagManager from "vue-tag-manager"
+
+Vue.use(VueTagManager, {
+    gtmId: 'GTM-XXXXXX'
+})
+```
+
+## Configuration Options
+
+| Option          | Description                                                                                  | Type     | Default       | Is Required? |
+| --------------- | -------------------------------------------------------------------------------------------- | -------- | ------------- | ------------ |
+| `gtmId`         | Google Tag Manager ID                                                                        | `string` | -             | Yes          |
+| `events`        | Additional events to track                                                                   | `object` | `{}`          | No           |
+| `dataLayer`     | Initialise the [GTM datalayer](https://developers.google.com/tag-manager/devguide#datalayer) | `object` | `undefined`   | No           |
+| `dataLayerName` | The [Data Layer variable name](https://developers.google.com/tag-manager/devguide#renaming)  | `string` | `"dataLayer"` | No           |
+| `preview`       | Used to [set an environment](https://support.google.com/tagmanager/answer/6311518?hl=en)     | `string` | `undefined`   | No           |
+| `auth`          | Used to set an environment, with `preview`                                                   | `string` | `undefined`   | No           |
+
+
 ## TODO
 
 - [x] Initital implementation from React GTM
 - [x] Vue Plugin
 - [ ] Regex page view matcher
+- [ ] Write up dev docs
 
 ## Inspired by
 
