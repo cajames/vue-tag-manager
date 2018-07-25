@@ -6,7 +6,8 @@
     "vue",
     "tag manager",
     "google tag manager",
-    "google analytics"
+    "analytics",
+    "gtm"
   ],
   "main": "lib/index.js",
   "types": "types/index.d.ts",
