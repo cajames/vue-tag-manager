@@ -1,5 +1,15 @@
+<a name="0.0.3"></a>
+## [0.0.3](https://github.com/cajames/vue-tag-manager/compare/v0.0.2...v0.0.3) (2018-07-25)
+
+
+### Features
+
+* add root umd export for Tag Manager ([d3ee16a](https://github.com/cajames/vue-tag-manager/commit/d3ee16a))
+
+
+
 <a name="0.0.2"></a>
-## 0.0.2 (2018-07-25)
+## [0.0.2](https://github.com/cajames/vue-tag-manager/compare/29583ae...v0.0.2) (2018-07-25)
 
 
 ### Features

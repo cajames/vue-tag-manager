@@ -1,6 +1,6 @@
 {
   "name": "vue-tag-manager",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Easy to use Google Tag Manager implementation for Vue",
   "keywords": [
     "vue",
