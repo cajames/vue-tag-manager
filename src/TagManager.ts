@@ -39,7 +39,7 @@ const TagManager = {
 		preview = ""
 	}: TagManagerConfig) {
 		const gtm = this.gtm({
-			id: gtmId,
+			gtmId,
 			events: events,
 			dataLayer: dataLayer || undefined,
 			dataLayerName: dataLayerName,

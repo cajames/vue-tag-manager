@@ -1,3 +1,10 @@
 import TagManager from "./TagManager";
+import { TagManagerConfig } from './types'
 
-export default TagManager
+const install = function(Vue, initConf: TagManagerConfig = { gtmId : '' }) {
+    TagManager.initialize(initConf)
+}
+
+export default {
+    install
+}
