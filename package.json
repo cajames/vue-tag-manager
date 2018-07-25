@@ -3,11 +3,12 @@
   "version": "0.0.1",
   "description": "Easy to use Google Tag Manager implementation for Vue.",
   "main": "dist/index.js",
+  "types": "types/index.d.ts",
   "repository": "git@github.com:cajames/vue-tag-manager.git",
   "author": "Chris James <chris@webglowit.net>",
   "license": "MIT",
   "scripts": {
-    "prepare": "parcel build src/index.ts --target node"
+    "prepare": "parcel build src/index.ts --target node && tsc --emitDeclarationOnly"
   },
   "files": [
     "dist",
