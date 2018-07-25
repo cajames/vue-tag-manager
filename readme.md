@@ -27,12 +27,16 @@ Vue.use(VueTagManager, {
 | `auth`          | Used to set an environment, with `preview`                                                   | `string` | `undefined`   | No           |
 
 
-## TODO
+## To-do
 
 - [x] Initital implementation from React GTM
-- [x] Vue Plugin
+- [x] Basic Vue Plugin
+- [ ] Shell out tests
+- [ ] Simplify the URL + snippet generation and injection
+- [ ] Basic don't break on SSR
 - [ ] Regex page view matcher
-- [ ] Write up dev docs
+- [ ] SSR injection
+- [ ] More through docs with examples
 
 ## Why need another GTM library?
 
