@@ -2,13 +2,21 @@
   "name": "vue-tag-manager",
   "version": "0.0.1",
   "description": "Easy to use Google Tag Manager implementation for Vue",
+  "keywords": [
+    "vue",
+    "tag manager",
+    "google tag manager",
+    "google analytics"
+  ],
   "main": "lib/index.js",
   "types": "types/index.d.ts",
   "repository": "git@github.com:cajames/vue-tag-manager.git",
   "author": "Chris James <chris@webglowit.net>",
   "license": "MIT",
   "scripts": {
-    "prepare": "./scripts/prepare.sh"
+    "prepare": "./scripts/prepare.sh",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "bump": "np"
   },
   "files": [
     "lib",
@@ -17,6 +25,8 @@
     "scripts"
   ],
   "devDependencies": {
+    "conventional-changelog": "^2.0.1",
+    "np": "^3.0.4",
     "parcel-bundler": "^1.9.7",
     "typescript": "^2.9.2"
   }
