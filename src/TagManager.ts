@@ -57,4 +57,8 @@ const TagManager = {
 	}
 };
 
+export const initialize = (options) => {
+	TagManager.initialize(options)
+}
+
 export default TagManager;
