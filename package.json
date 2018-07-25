@@ -16,6 +16,7 @@
   "license": "MIT",
   "scripts": {
     "prepare": "./scripts/prepare.sh",
+    "test": "jest",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
     "bump": "np"
   },
@@ -26,9 +27,12 @@
     "scripts"
   ],
   "devDependencies": {
+    "@types/jest": "^23.3.0",
     "conventional-changelog-cli": "^2.0.1",
+    "jest": "^23.4.1",
     "np": "^3.0.4",
     "parcel-bundler": "^1.9.7",
+    "ts-jest": "^23.0.1",
     "typescript": "^2.9.2"
   }
 }

@@ -3,3 +3,4 @@ dist
 lib
 types
 .cache
+coverage
