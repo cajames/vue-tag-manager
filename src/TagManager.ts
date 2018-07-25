@@ -46,6 +46,7 @@ const TagManager = {
 			auth,
 			preview
 		});
+
 		if (dataLayer) document.head.appendChild(gtm.dataScript);
 		document.head.appendChild(gtm.script());
 		document.body.appendChild(gtm.noScript());
