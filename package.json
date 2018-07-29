@@ -1,38 +1,39 @@
 {
-  "name": "vue-tag-manager",
-  "version": "0.0.3",
-  "description": "Easy to use Google Tag Manager implementation for Vue",
-  "keywords": [
-    "vue",
-    "tag manager",
-    "google tag manager",
-    "analytics",
-    "gtm"
-  ],
-  "main": "lib/index.js",
-  "types": "types/index.d.ts",
-  "repository": "git@github.com:cajames/vue-tag-manager.git",
-  "author": "Chris James <chris@webglowit.net>",
-  "license": "MIT",
-  "scripts": {
-    "prepare": "./scripts/prepare.sh",
-    "test": "jest",
-    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
-    "bump": "np"
-  },
-  "files": [
-    "lib",
-    "types",
-    "src",
-    "scripts"
-  ],
-  "devDependencies": {
-    "@types/jest": "^23.3.0",
-    "conventional-changelog-cli": "^2.0.1",
-    "jest": "^23.4.1",
-    "np": "^3.0.4",
-    "parcel-bundler": "^1.9.7",
-    "ts-jest": "^23.0.1",
-    "typescript": "^2.9.2"
-  }
+	"name": "vue-tag-manager",
+	"version": "0.0.3",
+	"description": "Easy to use Google Tag Manager implementation for Vue",
+	"keywords": [
+		"vue",
+		"tag manager",
+		"google tag manager",
+		"analytics",
+		"gtm"
+	],
+	"main": "lib/index.js",
+	"types": "types/index.d.ts",
+	"repository": "git@github.com:cajames/vue-tag-manager.git",
+	"author": "Chris James <chris@webglowit.net>",
+	"license": "MIT",
+	"scripts": {
+		"dev": "npx parcel watch src/index.ts -d lib --global VueTagManager --target node",
+		"prepare": "./scripts/prepare.sh",
+		"test": "jest",
+		"version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+		"bump": "np"
+	},
+	"files": [
+		"lib",
+		"types",
+		"src",
+		"scripts"
+	],
+	"devDependencies": {
+		"@types/jest": "^23.3.0",
+		"conventional-changelog-cli": "^2.0.1",
+		"jest": "^23.4.1",
+		"np": "^3.0.4",
+		"parcel-bundler": "^1.9.7",
+		"ts-jest": "^23.0.1",
+		"typescript": "^2.9.2"
+	}
 }

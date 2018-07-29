@@ -1,10 +1,11 @@
 declare const process: any;
 
-import TagManager from "./TagManager";
-import { TagManagerConfig } from "./types";
+import TagManager from "./tag-manager/TagManager";
+import { TagManagerOptions } from "./types";
 
-const install = function(Vue, initConf: TagManagerConfig = { gtmId: null }) {
-	TagManager.initialize(initConf);
+const install = function(Vue, options: TagManagerOptions = { gtmId: null }) {
+
+
 };
 
 export default {

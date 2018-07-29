@@ -1,6 +1,6 @@
 // https://developers.google.com/tag-manager/quickstart
 
-import { TagManagerConfig } from "./types";
+import { PluginConfig } from "./types";
 
 const Snippets = {
 	tags: function({
@@ -10,7 +10,7 @@ const Snippets = {
 		dataLayerName,
 		preview,
 		auth
-	}: TagManagerConfig) {
+	}: PluginConfig) {
 		const gtm_auth = `&gtm_auth=${auth}`;
 		const gtm_preview = `&gtm_preview=${preview}`;
 

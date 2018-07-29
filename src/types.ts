@@ -1,9 +1,16 @@
-export interface TagManagerConfig {
+export interface PluginConfig {
 	gtmId: string;
-	events?: object;
+	queryParams?: object;
 	dataLayer?: object;
 	dataLayerName?: string;
+	events?: object;
 	preview?: string;
 	auth?: string;
-	router?: object;
+}
+
+export interface TagManagerOptions {
+	gtmId: string;
+	queryParams?: any;
+	dataLayerName?: string;
+	dataLayer?: object;
 }

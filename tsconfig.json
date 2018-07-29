@@ -13,7 +13,10 @@
 		"outDir": "dist",
 		"declaration": true,
 		"declarationDir": "types",
-		"sourceMap": true
+		"sourceMap": true,
+		"paths": {
+			"@/*": ["src/*"]
+		}
 	},
 	"include": ["src/**/*.ts"],
 	"exclude": ["node_modules", "src/**/*.spec.ts"]

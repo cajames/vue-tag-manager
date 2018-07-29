@@ -31,7 +31,7 @@ Vue.use(VueTagManager, {
 
 - [x] Initital implementation from React GTM
 - [x] Basic Vue Plugin
-- [ ] Shell out tests
+- [x] Shell out tests
 - [ ] Simplify the URL + snippet generation and injection
 - [ ] Basic don't break on SSR
 - [ ] Regex page view matcher
