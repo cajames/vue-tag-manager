@@ -1,5 +1,6 @@
 declare const global: any;
 import * as injector from "../dom-injector";
+import { inject } from "../../../node_modules/@types/async";
 
 describe("dom-injector", () => {
 	const originalDocument = document;
@@ -57,11 +58,12 @@ describe("dom-injector", () => {
 	describe("#injectScriptTagIntoHead", () => {
 
         let scriptTag;
-        const originalHead = document.head
-        console.log('YOOOO', document.head)
 
         beforeEach(() => {
             scriptTag = document.createElement('script')
+        })
+        afterEach(() => {
+			document.head.innerHTML = ''
         })
 
 		it("should throw an error if no script tag provided", () => {
@@ -69,7 +71,11 @@ describe("dom-injector", () => {
 		});
 
 		it("should insert the script tag at the very top of the head", () => {
-
+			const metatag = document.createElement('meta')
+			metatag.lang = "en"
+			document.head.appendChild(metatag)
+			injector.injectScriptTagIntoHead(scriptTag)
+			expect(document.head.firstChild).toBe(scriptTag)
 		});
 
 		it("should throw an error if no document provided", () => {

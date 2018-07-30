@@ -42,4 +42,8 @@ export const getScriptTagWithContent = (script: string): HTMLScriptElement => {
  */
 export const injectScriptTagIntoHead = (scriptTag: HTMLScriptElement): void => {
 
+	if (!scriptTag) throw 'No script tag passed.'
+
+	
+
 }
