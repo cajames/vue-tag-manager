@@ -1,5 +1,5 @@
 
-import VueTagManager from './index'
+import VueTagManager from '../index'
 
 describe('index', () => {
 

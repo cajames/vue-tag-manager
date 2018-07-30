@@ -1,4 +1,4 @@
-import { PluginConfig } from "./../types";
+import { PluginConfig } from "../types";
 import Snippets from "./Snippets";
 
 const TagManager = {
