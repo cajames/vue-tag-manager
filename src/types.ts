@@ -13,4 +13,5 @@ export interface TagManagerOptions {
 	queryParams?: any;
 	dataLayerName?: string;
 	dataLayer?: object;
+	scriptUrl?: string;
 }
