@@ -3,8 +3,10 @@
  * Creates an empty script tag
  */
 const createScriptTag = () => {
-	// const scriptTag = document.createElement("script");
-	// return scriptTag;
+	if (!window || !window.document) throw 'No window object'
+
+	const scriptTag = window.document.createElement("script");
+	return scriptTag;
 };
 
 /**
@@ -13,22 +15,25 @@ const createScriptTag = () => {
  * @param isAsync should script load async
  */
 export const getScriptTagWithSrc = (src: string, isAsync: boolean = false): HTMLScriptElement => {
-	// const scriptTag = createScriptTag()
-	// scriptTag.src = src
-	// scriptTag.async = isAsync
-	// return scriptTag
-	throw 'not implemented'
+
+	if (!src) throw 'No src passed.'
+
+	const scriptTag = createScriptTag()
+	scriptTag.src = src
+	scriptTag.async = isAsync
+	return scriptTag
 };
 
 /**
  * Returns a script tag with provided script injected
  * @param script script content to be injected into a script tag
  */
-export const getScriptTagWithScript = (script: string): HTMLScriptElement => {
-	// const scriptTag = createScriptTag()
-	// scriptTag.innerHTML = script
-	// return scriptTag
-	throw 'not implemented'
+export const getScriptTagWithContent = (script: string): HTMLScriptElement => {
+	if (!script) throw 'No script content passed.'
+
+	const scriptTag = createScriptTag()
+	scriptTag.innerHTML = script
+	return scriptTag
 };
 
 /**
