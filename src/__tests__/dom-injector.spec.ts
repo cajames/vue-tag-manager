@@ -69,8 +69,7 @@ describe("dom-injector", () => {
 		});
 
 		it("should insert the script tag at the very top of the head", () => {
-            injector.injectScriptTagIntoHead
-            expect()
+
 		});
 
 		it("should throw an error if no document provided", () => {
