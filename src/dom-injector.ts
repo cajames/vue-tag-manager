@@ -3,9 +3,7 @@
  * Creates an empty script tag
  */
 const createScriptTag = () => {
-	if (!window || !window.document) throw 'No window object'
-
-	const scriptTag = window.document.createElement("script");
+	const scriptTag = document.createElement("script");
 	return scriptTag;
 };
 
@@ -43,7 +41,6 @@ export const getScriptTagWithContent = (script: string): HTMLScriptElement => {
 export const injectScriptTagIntoHead = (scriptTag: HTMLScriptElement): void => {
 
 	if (!scriptTag) throw 'No script tag passed.'
-
-	
+	window.document.head.appendChild(scriptTag)
 
 }
