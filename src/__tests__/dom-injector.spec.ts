@@ -1,25 +1,33 @@
-import * as inspector from '../dom-injector'
+import * as injector from '../dom-injector'
 
-describe('dom-injector', () => {
+fdescribe('dom-injector', () => {
+
+    const originalDocument = document
+    beforeEach(() => {
+        jest.resetAllMocks()
+    })
 
     describe('#getScriptTagWithSrc', () => {
-        xit('should return a script tag with src set', null)
-        xit('should return a script tag with src set and async true if async defined', null)
-        xit('should throw an error if no src', null)
-        xit('should throw an error if no document', null)
+        it('should return a script tag with src set', () => {
+            const script = injector.getScriptTagWithSrc('//someurl.com')
+            expect(script)
+        })
+        it('should return a script tag with src set and async true if async defined', null)
+        it('should throw an error if no src', null)
+        it('should throw an error if no document', null)
     })
 
     describe('#getScriptTagWithScript', () => {
-        xit('should return a script tag with the provided script', null)
-        xit('should throw an error if no script provided', null)
-        xit('should throw an error if no document', null)
+        it('should return a script tag with the provided script', null)
+        it('should throw an error if no script provided', null)
+        it('should throw an error if no document', null)
     })
 
     describe('#injectScriptTagIntoHead', () => {
-        xit('should throw an error if no scriptTag provided', null)
-        xit('should throw an error if wrong input type provided', null)
-        xit('should insert the script tag at the very top of the head', null)
-        xit('should throw an error if no document provided', null)
+        it('should throw an error if no scriptTag provided', null)
+        it('should throw an error if wrong input type provided', null)
+        it('should insert the script tag at the very top of the head', null)
+        it('should throw an error if no document provided', null)
     })
 
 })
