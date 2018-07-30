@@ -52,7 +52,21 @@ class TagManager {
 	 * Returns the script to initialize the data layer
 	 */
 	getDataLayerScriptContent(): string {
-		throw "not implemented";
+
+		const dataLayerName = this.options.dataLayerName
+		const initialValues = this.options.dataLayer
+		const scriptArray = [];
+
+		// Initialize data layer
+		scriptArray.push(`window['${dataLayerName}'] = window['${dataLayerName}'] || [];`)
+
+		if (initialValues) {
+			scriptArray.push(`window['${dataLayerName}'].push(${JSON.stringify(initialValues)});`)
+		}
+
+		scriptArray.push(`window['${dataLayerName}'].push({ event: 'gtm.js', 'gtm.start': new Date().getTime() });`)
+
+		return scriptArray.join('\n')
 	}
 
 	/**
