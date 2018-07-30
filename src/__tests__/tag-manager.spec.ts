@@ -1,3 +1,4 @@
+declare const global: any
 import TagManager from "../tag-manager";
 
 describe("TagManager", () => {
@@ -59,16 +60,16 @@ describe("TagManager", () => {
 
 	describe("#getDataScriptContent", () => {
 		afterEach(() => {
-			delete (global as any).dataLayer;
-			delete (global as any).anotherLayer;
+			delete global.dataLayer;
+			delete global.anotherLayer;
 		});
 
 		it("should initialise data layer with name `dataLayer` by default", () => {
 			const gtm = new TagManager({ gtmId: "GTM-123" });
 			const script = gtm.getDataLayerScriptContent();
 			eval(script);
-			expect((global as any).dataLayer).toBeDefined;
-			expect((global as any).dataLayer).toBeInstanceOf(Array);
+			expect(global.dataLayer).toBeDefined;
+			expect(global.dataLayer).toBeInstanceOf(Array);
 		});
 
 		it("should keep original values if dataLayer is predefined", () => {
@@ -76,10 +77,10 @@ describe("TagManager", () => {
 			const script = gtm.getDataLayerScriptContent();
 
 			const expectedValue = { something: "value" };
-			(global as any).dataLayer = [expectedValue];
+			global.dataLayer = [expectedValue];
 			eval(script);
-			expect((global as any).dataLayer.length).toBeGreaterThan(1);
-			expect((global as any).dataLayer[0]).toMatchObject(expectedValue);
+			expect(global.dataLayer.length).toBeGreaterThan(1);
+			expect(global.dataLayer[0]).toMatchObject(expectedValue);
 		});
 
 		it("should default the data layer with `gtm.js` event and `gtm.start`", () => {
@@ -92,13 +93,13 @@ describe("TagManager", () => {
 				"gtm.start": nowTime
 			};
 			eval(script);
-			expect((global as any).dataLayer.length).toBe(1);
-			expect((global as any).dataLayer[0]).toHaveProperty(
+			expect(global.dataLayer.length).toBe(1);
+			expect(global.dataLayer[0]).toHaveProperty(
 				"event",
 				"gtm.js"
 			);
-			expect((global as any).dataLayer[0]).toHaveProperty(["gtm.start"]);
-			expect((global as any).dataLayer[0]["gtm.start"]).toBeCloseTo(
+			expect(global.dataLayer[0]).toHaveProperty(["gtm.start"]);
+			expect(global.dataLayer[0]["gtm.start"]).toBeCloseTo(
 				nowTime
 			);
 		});
@@ -110,9 +111,9 @@ describe("TagManager", () => {
 			});
 			const script = gtm.getDataLayerScriptContent();
 			eval(script);
-			expect((global as any).dataLayer).not.toBeDefined();
-			expect((global as any).anotherLayer).toBeDefined();
-			expect((global as any).anotherLayer.length).toBe(1);
+			expect(global.dataLayer).not.toBeDefined();
+			expect(global.anotherLayer).toBeDefined();
+			expect(global.anotherLayer.length).toBe(1);
 		});
 
 		it("should add more data variables provided to the data layer", () => {
@@ -123,16 +124,16 @@ describe("TagManager", () => {
 			});
 			const script = gtm.getDataLayerScriptContent();
 			eval(script);
-			expect((global as any).dataLayer.length).toBe(2);
-			expect((global as any).dataLayer[0]).toMatchObject(expected);
+			expect(global.dataLayer.length).toBe(2);
+			expect(global.dataLayer[0]).toMatchObject(expected);
 		});
 	});
 
 	describe("#push", () => {
 
 		afterEach(() => {
-			delete (global as any).dataLayer;
-			delete (global as any).anotherLayer;
+			delete global.dataLayer;
+			delete global.anotherLayer;
 		});
 
 		it("should push events into the dataLayer", () => {
