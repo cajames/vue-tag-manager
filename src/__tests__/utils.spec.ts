@@ -1,4 +1,4 @@
-import { warn } from './index'
+import { warn } from '../utils'
 
 describe('Utils', () => {
 

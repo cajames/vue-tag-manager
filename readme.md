@@ -33,10 +33,11 @@ Vue.use(VueTagManager, {
 - [x] Basic Vue Plugin
 - [x] Shell out tests
 - [ ] Simplify the URL + snippet generation and injection
+- [ ] Vue directive and prototype property
 - [ ] Basic don't break on SSR
-- [ ] Regex page view matcher
 - [ ] SSR injection
 - [ ] More through docs with examples
+- [ ] Regex page view matcher? (might recommend this done outside plugin)
 
 ## Why need another GTM library?
 

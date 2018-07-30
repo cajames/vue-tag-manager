@@ -1,5 +1,5 @@
-import { warn } from "../shared";
-import { TagManagerOptions } from "../../src/types";
+import { warn } from "./utils";
+import { TagManagerOptions } from "./types";
 
 /**
  * Global Tag Manager instance
@@ -18,6 +18,7 @@ class TagManager {
 
 		if (!this.options.gtmId) {
 			warn("No GTM id provided");
+			return
 		}
 	}
 
@@ -25,14 +26,21 @@ class TagManager {
 	 * Returns the URL and query params to get the tag manager script
 	 */
 	getScriptUrl(): string {
-		return '';
+
+
+
+
+
+
+
+		throw 'not implemented'
 	}
 
 	/**
 	 * Returns the script to initialize the data layer
 	 */
 	getDataLayerScriptContent(): string {
-		return '';
+		throw 'not implemented'
 	}
 
 	/**
@@ -40,7 +48,7 @@ class TagManager {
 	 * @param event event object
 	 */
 	push(event: object): void {
-
+		throw 'not implemented'
 	}
 }
 
