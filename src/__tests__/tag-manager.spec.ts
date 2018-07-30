@@ -152,7 +152,7 @@ describe("TagManager", () => {
 
 			expect(global.dataLayer).toBeInstanceOf(Array)
 			expect(global.dataLayer.length).toBe(2)
-			expect(global.datalayer[1]).toMatchObject(someEvent)
+			expect(global.dataLayer[1]).toMatchObject(someEvent)
 		});
 		it("should push events into correct dataLayer property if named differently", () => {
 			const gtm = new TagManager({
