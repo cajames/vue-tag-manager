@@ -1,6 +1,6 @@
 // https://developers.google.com/tag-manager/quickstart
 
-import { PluginConfig } from "./types";
+import { PluginConfig } from "../types";
 
 const Snippets = {
 	tags: function({
