@@ -143,9 +143,36 @@ describe("TagManager", () => {
 			const script = gtm.getDataLayerScriptContent()
 			eval(script)
 
+			const someEvent = {
+				event: 'something',
+				'value': 'another'
+			}
+
+			gtm.push(someEvent)
+
+			expect(global.dataLayer).toBeInstanceOf(Array)
+			expect(global.dataLayer.length).toBe(2)
+			expect(global.dataLayer[1]).toMatchObject(someEvent)
 		});
 		it("should push events into correct dataLayer property if named differently", () => {
-			throw "fail";
+			const gtm = new TagManager({
+				gtmId: "GTM-123",
+				dataLayerName: 'anotherLayer'
+			});
+			const script = gtm.getDataLayerScriptContent()
+			eval(script)
+
+			const someEvent = {
+				event: 'something',
+				'value': 'another'
+			}
+
+			gtm.push(someEvent)
+
+			expect(global.dataLayer).not.toBeDefined()
+			expect(global.anotherLayer).toBeInstanceOf(Array)
+			expect(global.anotherLayer.length).toBe(2)
+			expect(global.anotherLayer[1]).toMatchObject(someEvent)
 		});
 	});
 });

@@ -74,7 +74,8 @@ class TagManager {
 	 * @param event event object
 	 */
 	push(event: object): void {
-		throw "not implemented";
+		const dataLayer = this.options.dataLayerName
+		window[dataLayer].push(event)
 	}
 }
 
