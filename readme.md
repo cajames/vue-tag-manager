@@ -32,12 +32,12 @@ Vue.use(VueTagManager, {
 - [x] Initital implementation from React GTM
 - [x] Basic Vue Plugin
 - [x] Shell out tests
-- [ ] Simplify the URL + snippet generation and injection
-- [ ] Vue directive and prototype property
-- [ ] Basic don't break on SSR
-- [ ] SSR injection
+- [x] Simplify the URL + snippet generation and injection
+- [x] Vue prototype property
+- [ ] Vue track directive
+- [x] Basic implementation - don't break on SSR
 - [ ] More through docs with examples
-- [ ] Regex page view matcher? (might recommend this done outside plugin)
+- [ ] SSR support
 
 ## Why need another GTM library?
 
