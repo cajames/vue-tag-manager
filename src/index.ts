@@ -2,9 +2,9 @@ declare const process: any;
 
 import TagManager from "./tag-manager";
 import {
-	getScriptTagWithContent,
-	getScriptTagWithSrc,
-	injectScriptTagIntoHead
+  getScriptTagWithContent,
+  getScriptTagWithSrc,
+  injectScriptTagIntoHead
 } from "./dom-injector";
 import { TagManagerOptions } from "./types";
 import { warn } from "./utils";
@@ -12,30 +12,32 @@ import { warn } from "./utils";
 let installed = false;
 
 const install = function(Vue, options: TagManagerOptions = { gtmId: null }) {
-	if (installed) return;
+  if (installed) return;
 
-	try {
-		// Initialize a tag manager
-		const tagManager = new TagManager(options);
+  try {
+    // Initialize a tag manager
+    const tagManager = new TagManager(options);
 
-		// Add gtm to the prototype
-		Vue.gtm = tagManager;
-		Vue.prototype.$gtm = tagManager;
+    // Add gtm to the prototype
+    Vue.gtm = tagManager;
+    Vue.prototype.$gtm = tagManager;
 
-		// Inject the tag manager scripts into DOM
-		injectScriptTagIntoHead(
-			getScriptTagWithContent(tagManager.getDataLayerScriptContent())
-		);
-		injectScriptTagIntoHead(
-			getScriptTagWithSrc(tagManager.getScriptUrl(), true)
-		);
+    // Inject the tag manager scripts into DOM
+    injectScriptTagIntoHead(
+      getScriptTagWithContent(tagManager.getDataLayerScriptContent())
+    );
+    injectScriptTagIntoHead(
+      getScriptTagWithSrc(tagManager.getScriptUrl(), true)
+    );
 
-		// TODO: Add track directive to the UI
-	} catch (e) {
-		warn(e);
-	}
+    installed = true;
+    // TODO: Add track directive to the UI
+
+  } catch (e) {
+    warn(e);
+  }
 };
 
 export default {
-	install
+  install
 };
