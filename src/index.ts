@@ -31,7 +31,6 @@ const install = function(Vue, options: TagManagerOptions = { gtmId: null }) {
     );
 
     installed = true;
-    // TODO: Add track directive to the UI
 
   } catch (e) {
     warn(e);

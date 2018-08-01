@@ -12,8 +12,18 @@ let vgtmInstalled = false;
 const initialize = (options: TagManagerOptions) => {
   if (vgtmInstalled) return;
 
-  // new TagManager - Initialize it.
-  const tagManager = new TagManager(options);
+  try {
+    // new TagManager - Initialize it.
+    const tagManager = new TagManager(options);
+    injectScriptTagIntoHead(
+      getScriptTagWithContent(tagManager.getDataLayerScriptContent())
+    );
+    injectScriptTagIntoHead(
+      getScriptTagWithSrc(tagManager.getScriptUrl(), true)
+    );
+  } catch (error) {
+    warn(error);
+  }
 };
 
 export { initialize };
