@@ -34,6 +34,7 @@ Vue.use(VueTagManager, {
 - [x] Shell out tests
 - [x] Simplify the URL + snippet generation and injection
 - [x] Vue prototype property
+- [ ] Vue auto-track router
 - [ ] Vue track directive
 - [x] Basic implementation - don't break on SSR
 - [ ] More through docs with examples
