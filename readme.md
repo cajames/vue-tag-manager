@@ -73,9 +73,9 @@ While this library is mainly for Vue, the core Tag Manager is just a javascript 
 - [x] Shell out tests
 - [x] Simplify the URL + snippet generation and injection
 - [x] Vue prototype property
+- [ ] Basic implementation - don't break on SSR
 - [ ] Vue auto-track router
 - [ ] Vue track directive
-- [x] Basic implementation - don't break on SSR
 - [ ] More through docs with examples
 - [ ] SSR support
 

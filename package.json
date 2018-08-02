@@ -34,6 +34,6 @@
 		"np": "^3.0.4",
 		"parcel-bundler": "^1.9.7",
 		"ts-jest": "^23.0.1",
-		"typescript": "^2.9.2"
+		"typescript": "^3.0.1"
 	}
 }
