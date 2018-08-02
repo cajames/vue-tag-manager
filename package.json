@@ -15,7 +15,7 @@
 	"author": "Chris James <chris@webglowit.net>",
 	"license": "MIT",
 	"scripts": {
-		"dev": "npx parcel watch src/index.ts -d lib --global VueTagManager --target node",
+		"dev": "npx parcel watch src/index.ts -d lib",
 		"prepare": "./scripts/prepare.sh",
 		"test": "jest",
 		"version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
