@@ -1,11 +1,35 @@
+import TagManager from "./tag-manager";
+import { TagManagerOptions } from "./types";
+import {
+  getScriptTagWithContent,
+  getScriptTagWithSrc,
+  injectScriptTagIntoHead
+} from "./dom-injector";
+import { warn } from "./utils";
 
-import TagManager from './tag-manager'
+let vgtmInstalled = false;
 
+const initialize = (options: TagManagerOptions) => {
+  if (vgtmInstalled) return;
 
-const initialize = () => {
-    // new TagManager - Initialize it.
-}
+  try {
 
-export {
-    initialize
-}
+    const tagManager = new TagManager(options);
+    injectScriptTagIntoHead(
+      getScriptTagWithContent(tagManager.getDataLayerScriptContent())
+    );
+    injectScriptTagIntoHead(
+      getScriptTagWithSrc(tagManager.getScriptUrl(), true)
+    );
+
+    (window as any).TagManager = tagManager
+
+    vgtmInstalled = true
+
+  } catch (error) {
+    warn(error)
+  }
+
+};
+
+export { initialize };
