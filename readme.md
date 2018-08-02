@@ -15,6 +15,8 @@ Vue.use(VueTagManager, {
     gtmId: 'GTM-XXXXXX'
 })
 
+new Vue({...})
+
 ```
 
 Later in app:
@@ -42,6 +44,13 @@ or in a template:
 ## Usage
 
 ### `push(entry: Object)`
+
+```js
+const entry = {event: 'something'}
+this.$gtm.push(entry)
+// or
+Vue.gtm.push(entry)
+```
 
 On a TagManager instance, this method allows you to push events onto the initialised data layer. See the [Google Tag Manager documentation](https://developers.google.com/tag-manager/devguide#events) for more details on event tracking with GTM.
 
