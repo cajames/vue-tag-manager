@@ -13,7 +13,7 @@ let installed = false;
 
 const install = function(Vue, options: TagManagerOptions = { gtmId: null }) {
   if (installed) return;
-
+  
   try {
     // Initialize a tag manager
     const tagManager = new TagManager(options);

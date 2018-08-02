@@ -76,6 +76,10 @@ class TagManager {
    * @param event event object
    */
   push(event: object): void {
+
+    if (!(event instanceof Object) || event instanceof Array)
+      throw "Pushed event is not an object.";
+
     const dataLayer = this.options.dataLayerName;
     window[dataLayer].push(event);
   }

@@ -168,5 +168,28 @@ describe("TagManager", () => {
       expect(global.anotherLayer.length).toBe(2);
       expect(global.anotherLayer[1]).toMatchObject(someEvent);
     });
+
+    it('should throw an error if nothing is pushed', () => {
+      const gtm = new TagManager({
+        gtmId: "GTM-123"
+      });
+      const script = gtm.getDataLayerScriptContent();
+      eval(script);
+      expect(() => (gtm as any).push()).toThrowError()
+    })
+    it('should throw an error if non-object is pushed', () => {
+
+      const gtm = new TagManager({
+        gtmId: "GTM-123"
+      });
+      const script = gtm.getDataLayerScriptContent();
+      eval(script);
+
+      expect(() => (gtm as any).push('string')).toThrowError()
+      expect(() => (gtm as any).push(true)).toThrowError()
+      expect(() => (gtm as any).push(1)).toThrowError()
+      expect(() => (gtm as any).push(['array', 'of', 'someKind'])).toThrowError()
+
+    })
   });
 });
