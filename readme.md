@@ -15,6 +15,8 @@ Vue.use(VueTagManager, {
     gtmId: 'GTM-XXXXXX'
 })
 
+new Vue({...})
+
 ```
 
 Later in app:
@@ -43,6 +45,13 @@ or in a template:
 
 ### `push(entry: Object)`
 
+```js
+const entry = {event: 'something'}
+this.$gtm.push(entry)
+// or
+Vue.gtm.push(entry)
+```
+
 On a TagManager instance, this method allows you to push events onto the initialised data layer. See the [Google Tag Manager documentation](https://developers.google.com/tag-manager/devguide#events) for more details on event tracking with GTM.
 
 ## Native Implementation
@@ -50,15 +59,14 @@ On a TagManager instance, this method allows you to push events onto the initial
 While this library is mainly for Vue, the core Tag Manager is just a javascript object, so it's been exported too. It can be used as such:
 
 ```html
-<!-- In the html head -->
-<script src="https://unpkg.com/vue-tag-manager@x.x.x/lib/TagManager.js"></script>
-<!-- Or use any other reference -->
-<script>
-    // intiates `window.TagManager`, and injects all necessary scripts.
-    VueTagManager.initialize({
-        gtmId: 'GTM-KG7LSMH'
-    })
-</script>
+<head>
+    <script src="https://unpkg.com/vue-tag-manager@x.x.x/lib/TagManager.js"></script>
+    <script>
+        VueTagManager.initialize({
+            gtmId: 'GTM-KG7LSMH'
+        })
+    </script>
+</head>
 
 <!-- In code later -->
 <script>
