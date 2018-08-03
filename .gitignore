@@ -4,3 +4,4 @@ lib
 types
 .cache
 coverage
+.rpt2_cache

@@ -1,5 +1,3 @@
-declare const process: any;
-
 import TagManager from "./tag-manager";
 import {
   getScriptTagWithContent,
@@ -13,7 +11,7 @@ let installed = false;
 
 const install = function(Vue, options: TagManagerOptions = { gtmId: null }) {
   if (installed) return;
-  
+ 
   try {
     // Initialize a tag manager
     const tagManager = new TagManager(options);
