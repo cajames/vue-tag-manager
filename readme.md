@@ -1,6 +1,8 @@
 # Vue Tag Manager
+[![Build Status](https://travis-ci.org/cajames/vue-tag-manager.svg?branch=master)](https://travis-ci.org/cajames/vue-tag-manager)
 
 > Simple Google Tag Manager implementation for Vue
+
 
 ## Usage
 
