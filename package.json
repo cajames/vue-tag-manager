@@ -10,13 +10,13 @@
 		"gtm"
 	],
 	"main": "lib/index.js",
-	"types": "types/index.d.ts",
+	"types": "lib/types/index.d.ts",
 	"repository": "git@github.com:cajames/vue-tag-manager.git",
 	"author": "Chris James <chris@webglowit.net>",
 	"license": "MIT",
 	"scripts": {
 		"dev": "webpack --watch",
-		"prepare": "NODE_ENV=production webpack && tsc --emitDeclarationOnly",
+		"prepare": "NODE_ENV=production webpack",
 		"test": "jest",
 		"version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
 		"bump": "np"
