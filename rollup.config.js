@@ -17,9 +17,9 @@ const pluginCJS = {
 }
 const pluginESM = {
   ...base,
-  input: pkg.module,
+  input: './src/index.ts',
   output: {
-      file: 'lib/index.esm.js',
+      file: pkg.module,
       format: 'esm'
   }
 }
