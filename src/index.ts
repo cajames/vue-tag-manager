@@ -6,9 +6,14 @@ import {
 } from "./dom-injector";
 import { warn } from "./utils";
 
+
+export interface PluginOptions extends TagManagerOptions {
+
+}
+
 let installed = false;
 
-const install = function(Vue, options: TagManagerOptions = { gtmId: null }) {
+const install = function(Vue, options: PluginOptions = { gtmId: null }) {
   if (installed) return;
  
   try {

@@ -1,9 +1,24 @@
 
 export interface TagManagerOptions {
+
+  /** GTM ID */
   gtmId: string;
-  queryParams?: any;
+
+  /** Query parameters to be added to the script URL, such as 
+   * `gtm_preview` any `gtm_id` for environment switching. Defaults to 
+   * empty object.
+   */
+  queryParams?: object;
+
+  /**
+   * Global Data Layer variable name. Defaults to `dataLayer`
+   */
   dataLayerName?: string;
+
+  /** Items that the dataLayer get's initilised with. Defaults to null. */
   dataLayer?: object;
+
+  /** Url for pulling the GTM script. Defaults to general GTM url. */
   scriptUrl?: string;
 }
 

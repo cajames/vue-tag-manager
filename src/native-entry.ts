@@ -6,9 +6,18 @@ import {
 } from "./dom-injector";
 import { warn } from "./utils";
 
+export interface NativeOptions extends TagManagerOptions {
+  /**
+   * Variable name of Tag Manager injected into the DOM.
+   * Defaults to `TagManager`
+   */
+  TagManagerVariableName?: string
+}
+
+
 let vgtmInstalled = false;
 
-const initialize = (options: TagManagerOptions) => {
+const initialize = (options: NativeOptions) => {
   if (vgtmInstalled) return;
 
   try {
@@ -21,7 +30,8 @@ const initialize = (options: TagManagerOptions) => {
       getScriptTagWithSrc(tagManager.getScriptUrl(), true)
     );
 
-    (window as any).TagManager = tagManager
+    const variableName = options.TagManagerVariableName || 'TagManager';
+    (window as any)[variableName] = tagManager
 
     vgtmInstalled = true
 
