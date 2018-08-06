@@ -1,3 +1,4 @@
+import pkg from './package.json'
 import typescript from 'rollup-plugin-typescript2';
 
 const base = {
@@ -8,15 +9,15 @@ const base = {
 
 const pluginCJS = {
   ...base,
-  entry: './src/index.ts',
+  input: './src/index.ts',
   output: {
-      file: 'lib/index.cjs.js',
+      file: pkg.main,
       format: 'cjs'
   }
 }
 const pluginESM = {
   ...base,
-  entry: './src/index.ts',
+  input: pkg.module,
   output: {
       file: 'lib/index.esm.js',
       format: 'esm'
@@ -25,9 +26,9 @@ const pluginESM = {
 
 const pluginUMD = {
   ...base,
-  entry: './src/index.ts',
+  input: './src/index.ts',
   output: {
-      file: 'lib/index.js',
+      file: pkg.unpkg,
       format: 'umd',
       name: 'VueTagManager'
   }
@@ -35,7 +36,7 @@ const pluginUMD = {
 
 const native = {
   ...base,
-  entry: './src/native-entry.ts',
+  input: './src/native-entry.ts',
   output: {
       file: 'lib/TagManager.js',
       format: 'umd',
