@@ -1,10 +1,9 @@
-import TagManager from "./tag-manager";
+import TagManager, { TagManagerOptions } from "./tag-manager";
 import {
   getScriptTagWithContent,
   getScriptTagWithSrc,
   injectScriptTagIntoHead
 } from "./dom-injector";
-import { TagManagerOptions } from "./types";
 import { warn } from "./utils";
 
 let installed = false;

@@ -1,5 +1,4 @@
-import TagManager from "./tag-manager";
-import { TagManagerOptions } from "./types";
+import TagManager, { TagManagerOptions } from "./tag-manager";
 import {
   getScriptTagWithContent,
   getScriptTagWithSrc,

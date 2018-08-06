@@ -1,4 +1,11 @@
-import { TagManagerOptions } from "./types";
+
+export interface TagManagerOptions {
+  gtmId: string;
+  queryParams?: any;
+  dataLayerName?: string;
+  dataLayer?: object;
+  scriptUrl?: string;
+}
 
 /**
  * Global Tag Manager instance

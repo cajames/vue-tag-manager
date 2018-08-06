@@ -15,7 +15,7 @@
 	"jsdelivr": "lib/index.js",
 	"types": "lib/index.d.ts",
 	"sideEffects": false,
-	"repository": "git@github.com:cajames/vue-tag-manager.git",
+	"repository": "http://github.com:cajames/vue-tag-manager",
 	"author": "Chris James <chris@webglowit.net>",
 	"license": "MIT",
 	"scripts": {
@@ -39,7 +39,6 @@
 		"rollup": "^0.63.5",
 		"rollup-plugin-typescript2": "^0.16.1",
 		"ts-jest": "^23.0.1",
-		"ts-loader": "^4.4.2",
 		"typescript": "^3.0.1"
 	}
 }
