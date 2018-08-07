@@ -84,7 +84,11 @@ describe("TagManager", () => {
     });
 
     it("should default the data layer with `gtm.js` event and `gtm.start`", () => {
+
       const nowTime = new Date().getTime();
+      // TODO: This shows knowledge of implementation. Should clean this up
+      const spy = jest.spyOn(Date.prototype, 'getTime').mockImplementation(() => nowTime)
+
       const gtm = new TagManager({ gtmId: "GTM-123" });
       const script = gtm.getDataLayerScriptContent();
 
@@ -94,9 +98,9 @@ describe("TagManager", () => {
       };
       eval(script);
       expect(global.dataLayer.length).toBe(1);
-      expect(global.dataLayer[0]).toHaveProperty("event", "gtm.js");
-      expect(global.dataLayer[0]).toHaveProperty(["gtm.start"]);
-      expect(global.dataLayer[0]["gtm.start"]).toBeCloseTo(nowTime);
+      expect(global.dataLayer[0]).toMatchObject(expectedValue)
+
+      spy.mockClear()
     });
 
     it("should use dataLayerName property for the data layer if provided", () => {

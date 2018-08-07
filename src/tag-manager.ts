@@ -1,11 +1,9 @@
-
 export interface TagManagerOptions {
-
   /** GTM ID */
   gtmId: string;
 
-  /** Query parameters to be added to the script URL, such as 
-   * `gtm_preview` any `gtm_id` for environment switching. Defaults to 
+  /** Query parameters to be added to the script URL, such as
+   * `gtm_preview` any `gtm_id` for environment switching. Defaults to
    * empty object.
    */
   queryParams?: object;
