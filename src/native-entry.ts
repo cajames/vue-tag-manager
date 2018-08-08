@@ -14,30 +14,25 @@ export interface NativeOptions extends TagManagerOptions {
   TagManagerVariableName?: string;
 }
 
-let vgtmInstalled = false;
+(window as any).vgtmInstalled = false;
 
 const initialize = (options: NativeOptions) => {
 
-  if (vgtmInstalled) return;
+  if ((window as any).vgtmInstalled) return;
 
   try {
-    console.log("REACHED 1!", vgtmInstalled);
     const tagManager = new TagManager(options);
-    console.log("REACHED 2!", vgtmInstalled, tagManager);
     injectScriptTagIntoHead(
       getScriptTagWithContent(tagManager.getDataLayerScriptContent())
     );
-    console.log("REACHED 2!", vgtmInstalled);
     injectScriptTagIntoHead(
       getScriptTagWithSrc(tagManager.getScriptUrl(), true)
     );
-    console.log("REACHED 3!", vgtmInstalled);
 
     const variableName = options.TagManagerVariableName || "TagManager";
     (window as any)[variableName] = tagManager;
 
-    vgtmInstalled = true;
-    console.log("REACHED x!", vgtmInstalled);
+    (window as any).vgtmInstalled = true;
   } catch (error) {
     warn(error);
   }

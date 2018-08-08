@@ -12,6 +12,7 @@ describe("NativeEntry", () => {
 
     afterEach(() => {
       delete (global as any).TagManager
+      delete (global as any).vgtmInstalled
     })
 
     it("should only warn when an error is raised", () => {
@@ -29,7 +30,6 @@ describe("NativeEntry", () => {
 
       native.initialize({ gtmId: "123" })
 
-      console.log((global as any).TagManager)
       expect((global as any).TagManager).toBeDefined()
       delete (global as any).TagManager
 
