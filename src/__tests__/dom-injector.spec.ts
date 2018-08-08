@@ -2,7 +2,6 @@ declare const global: any;
 import * as injector from "../dom-injector";
 
 describe("dom-injector", () => {
-  const originalDocument = document;
   beforeEach(() => {
     jest.resetAllMocks();
   });

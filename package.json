@@ -1,44 +1,49 @@
 {
-	"name": "vue-tag-manager",
-	"version": "0.1.1",
-	"description": "Easy to use Google Tag Manager implementation for Vue",
-	"keywords": [
-		"vue",
-		"tag manager",
-		"google tag manager",
-		"analytics",
-		"gtm"
-	],
-	"main": "lib/index.cjs.js",
-	"module": "lib/index.esm.js",
-	"unpkg": "lib/index.js",
-	"jsdelivr": "lib/index.js",
-	"types": "lib/index.d.ts",
-	"sideEffects": false,
-	"repository": "http://github.com:cajames/vue-tag-manager",
-	"author": "Chris James <chris@webglowit.net>",
-	"license": "MIT",
-	"scripts": {
-		"dev": "rollup -c -w",
-		"prepare": "NODE_ENV=production rollup -c",
-		"test": "jest",
-		"version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
-		"bump": "np"
-	},
-	"files": [
-		"lib",
-		"types",
-		"src",
-		"scripts"
-	],
-	"devDependencies": {
-		"@types/jest": "^23.3.0",
-		"conventional-changelog-cli": "^2.0.1",
-		"jest": "^23.4.1",
-		"np": "^3.0.4",
-		"rollup": "^0.63.5",
-		"rollup-plugin-typescript2": "^0.16.1",
-		"ts-jest": "^23.0.1",
-		"typescript": "^3.0.1"
-	}
+  "name": "vue-tag-manager",
+  "version": "0.1.1",
+  "description": "Easy to use Google Tag Manager implementation for Vue",
+  "keywords": [
+    "vue",
+    "tag manager",
+    "google tag manager",
+    "analytics",
+    "gtm"
+  ],
+  "main": "lib/index.cjs.js",
+  "module": "lib/index.esm.js",
+  "unpkg": "lib/index.js",
+  "jsdelivr": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "sideEffects": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cajames/vue-tag-manager.git"
+  },
+  "author": "Chris James <chris@webglowit.net>",
+  "license": "MIT",
+  "scripts": {
+    "dev": "rollup -c -w",
+    "prepare": "NODE_ENV=production rollup -c",
+    "test": "jest",
+    "version": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0 && git add CHANGELOG.md",
+    "bump": "np",
+    "coverage": "cat ./coverage/lcov.info | coveralls"
+  },
+  "files": [
+    "lib",
+    "types",
+    "src",
+    "scripts"
+  ],
+  "devDependencies": {
+    "@types/jest": "^23.3.0",
+    "conventional-changelog-cli": "^2.0.1",
+    "coveralls": "^3.0.2",
+    "jest": "^23.4.1",
+    "np": "^3.0.4",
+    "rollup": "^0.63.5",
+    "rollup-plugin-typescript2": "^0.16.1",
+    "ts-jest": "^23.0.1",
+    "typescript": "^3.0.1"
+  }
 }

@@ -11,17 +11,16 @@ export interface NativeOptions extends TagManagerOptions {
    * Variable name of Tag Manager injected into the DOM.
    * Defaults to `TagManager`
    */
-  TagManagerVariableName?: string
+  TagManagerVariableName?: string;
 }
 
-
-let vgtmInstalled = false;
+(window as any).vgtmInstalled = false;
 
 const initialize = (options: NativeOptions) => {
-  if (vgtmInstalled) return;
+
+  if ((window as any).vgtmInstalled) return;
 
   try {
-
     const tagManager = new TagManager(options);
     injectScriptTagIntoHead(
       getScriptTagWithContent(tagManager.getDataLayerScriptContent())
@@ -30,15 +29,13 @@ const initialize = (options: NativeOptions) => {
       getScriptTagWithSrc(tagManager.getScriptUrl(), true)
     );
 
-    const variableName = options.TagManagerVariableName || 'TagManager';
-    (window as any)[variableName] = tagManager
+    const variableName = options.TagManagerVariableName || "TagManager";
+    (window as any)[variableName] = tagManager;
 
-    vgtmInstalled = true
-
+    (window as any).vgtmInstalled = true;
   } catch (error) {
-    warn(error)
+    warn(error);
   }
-
 };
 
 export { initialize };
