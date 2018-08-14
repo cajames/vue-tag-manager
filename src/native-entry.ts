@@ -29,10 +29,10 @@ const initialize = (options: NativeOptions) => {
       getScriptTagWithSrc(tagManager.getScriptUrl(), true)
     );
 
-    const variableName = options.TagManagerVariableName || "TagManager";
-    (window as any)[variableName] = tagManager;
-
     (window as any).vgtmInstalled = true;
+
+    return tagManager;
+
   } catch (error) {
     warn(error);
   }
