@@ -15,10 +15,7 @@
   "jsdelivr": "lib/index.js",
   "types": "lib/index.d.ts",
   "sideEffects": false,
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cajames/vue-tag-manager.git"
-  },
+  "repository": "github:cajames/vue-tag-manager",
   "author": "Chris James <chris@webglowit.net>",
   "license": "MIT",
   "scripts": {
