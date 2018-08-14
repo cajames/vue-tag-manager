@@ -1,3 +1,14 @@
+<a name="0.1.2"></a>
+## [0.1.2](https://github.com/cajames/vue-tag-manager/compare/v0.1.1...v0.1.2) (2018-08-14)
+
+
+### Bug Fixes
+
+* Fixed esm input and output paths ([24e7847](https://github.com/cajames/vue-tag-manager/commit/24e7847))
+* updating rollup config to use `input` ([0480c94](https://github.com/cajames/vue-tag-manager/commit/0480c94))
+
+
+
 <a name="0.1.1"></a>
 ## [0.1.1](https://github.com/cajames/vue-tag-manager/compare/v0.1.0...v0.1.1) (2018-08-03)
 
