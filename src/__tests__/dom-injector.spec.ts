@@ -9,7 +9,7 @@ describe("dom-injector", () => {
   describe("#getScriptTagWithSrc", () => {
     it("should return a script tag with src set", () => {
       const script = injector.getScriptTagWithSrc("//someurl.com");
-      expect(script.src).toBe("//someurl.com");
+      expect(script.src).toBe("http://someurl.com/");
     });
     it("should return a script tag with async true if async defined", () => {
       const script = injector.getScriptTagWithSrc("//test.com", true);

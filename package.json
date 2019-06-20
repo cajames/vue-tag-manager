@@ -33,14 +33,14 @@
     "scripts"
   ],
   "devDependencies": {
-    "@types/jest": "^23.3.0",
+    "@types/jest": "^24.0.15",
     "conventional-changelog-cli": "^2.0.1",
     "coveralls": "^3.0.2",
-    "jest": "^23.4.1",
-    "np": "^3.0.4",
-    "rollup": "^0.63.5",
-    "rollup-plugin-typescript2": "^0.16.1",
-    "ts-jest": "^23.0.1",
+    "jest": "^24.8.0",
+    "np": "^5.0.3",
+    "rollup": "^1.15.6",
+    "rollup-plugin-typescript2": "^0.21.2",
+    "ts-jest": "^24.0.2",
     "typescript": "^3.0.1"
   }
 }
