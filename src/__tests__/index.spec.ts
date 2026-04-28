@@ -17,7 +17,7 @@ describe("VuePlugin", () => {
   });
 
   it("should only error in console when an error is thrown", () => {
-    expect(() => VueTagManager.install({})).not.toThrowError();
+    expect(() => VueTagManager.install({})).not.toThrow();
     expect(warn).toHaveBeenCalled();
   });
 

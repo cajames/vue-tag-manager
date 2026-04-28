@@ -16,7 +16,7 @@ describe("NativeEntry", () => {
     })
 
     it("should only warn when an error is raised", () => {
-      expect(() => native.initialize({ gtmId: null })).not.toThrowError()
+      expect(() => native.initialize({ gtmId: null })).not.toThrow()
     });
 
     it("should initialize `TagManager` in the global namespace by default", () => {

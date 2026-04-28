@@ -1,6 +1,6 @@
 export interface TagManagerOptions {
   /** GTM ID */
-  gtmId: string;
+  gtmId?: string | null;
 
   /** Query parameters to be added to the script URL, such as
    * `gtm_preview` any `gtm_id` for environment switching. Defaults to
@@ -69,9 +69,9 @@ class TagManager {
    * Returns the script to initialize the data layer
    */
   getDataLayerScriptContent(): string {
-    const dataLayerName = this.options.dataLayerName;
+    const dataLayerName = this.options.dataLayerName || "dataLayer";
     const initialValues = this.options.dataLayer;
-    const scriptArray = [];
+    const scriptArray: string[] = [];
 
     // Initialize data layer
     scriptArray.push(
@@ -99,7 +99,7 @@ class TagManager {
     if (!(event instanceof Object) || event instanceof Array)
       throw "Pushed event is not an object.";
 
-    const dataLayer = this.options.dataLayerName;
+    const dataLayer = this.options.dataLayerName || "dataLayer";
     window[dataLayer].push(event);
   }
 }

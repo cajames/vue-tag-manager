@@ -1,5 +1,7 @@
-import pkg from './package.json'
-import typescript from 'rollup-plugin-typescript2';
+const { readFileSync } = require('node:fs');
+const typescript = require('rollup-plugin-typescript2');
+
+const pkg = JSON.parse(readFileSync('./package.json', 'utf8'));
 
 const base = {
   plugins: [
@@ -44,7 +46,7 @@ const native = {
   }
 }
 
-export default [
+module.exports = [
     pluginCJS,
     pluginESM,
     pluginUMD,

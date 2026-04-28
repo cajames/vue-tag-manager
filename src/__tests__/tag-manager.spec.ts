@@ -3,7 +3,7 @@ import TagManager from "../tag-manager";
 
 describe("TagManager", () => {
   it("should throw an error if no GTM ID is provided", () => {
-    expect(() => new TagManager({ gtmId: undefined })).toThrowError();
+    expect(() => new TagManager({ gtmId: undefined })).toThrow();
   });
 
   describe("#getStriptUrl", () => {
@@ -179,7 +179,7 @@ describe("TagManager", () => {
       });
       const script = gtm.getDataLayerScriptContent();
       eval(script);
-      expect(() => (gtm as any).push()).toThrowError()
+      expect(() => (gtm as any).push()).toThrow()
     })
     it('should throw an error if non-object is pushed', () => {
 
@@ -189,10 +189,10 @@ describe("TagManager", () => {
       const script = gtm.getDataLayerScriptContent();
       eval(script);
 
-      expect(() => (gtm as any).push('string')).toThrowError()
-      expect(() => (gtm as any).push(true)).toThrowError()
-      expect(() => (gtm as any).push(1)).toThrowError()
-      expect(() => (gtm as any).push(['array', 'of', 'someKind'])).toThrowError()
+      expect(() => (gtm as any).push('string')).toThrow()
+      expect(() => (gtm as any).push(true)).toThrow()
+      expect(() => (gtm as any).push(1)).toThrow()
+      expect(() => (gtm as any).push(['array', 'of', 'someKind'])).toThrow()
 
     })
   });
